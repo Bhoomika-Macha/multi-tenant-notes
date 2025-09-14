@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import "../App.css";
+
+const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:3000";
 
 function Notes({ token, setToken }) {
   const [notes, setNotes] = useState([]);
@@ -10,7 +12,6 @@ function Notes({ token, setToken }) {
   const [plan, setPlan] = useState("free");
   const [tenantSlug, setTenantSlug] = useState("");
 
-  // Decode token to get tenant slug
   useEffect(() => {
     try {
       const decoded = jwtDecode(token);
@@ -22,7 +23,7 @@ function Notes({ token, setToken }) {
 
   const fetchNotes = useCallback(async () => {
     try {
-      const res = await axios.get("http://localhost:3000/notes", {
+      const res = await axios.get(`${API_BASE}/notes`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setNotes(res.data.notes || []);
@@ -39,7 +40,7 @@ function Notes({ token, setToken }) {
   const createNote = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/notes",
+        `${API_BASE}/notes`,
         { title, content },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -54,7 +55,7 @@ function Notes({ token, setToken }) {
 
   const deleteNote = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/notes/${id}`, {
+      await axios.delete(`${API_BASE}/notes/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setNotes(notes.filter((note) => note.id !== id));
@@ -67,7 +68,7 @@ function Notes({ token, setToken }) {
   const upgradePlan = async () => {
     try {
       await axios.post(
-        `http://localhost:3000/tenants/${tenantSlug}/upgrade`,
+        `${API_BASE}/tenants/${tenantSlug}/upgrade`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
