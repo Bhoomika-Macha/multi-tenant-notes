@@ -40,12 +40,25 @@ app.get("/tenants", async (req, res) => {
   }
 });
 
+// Debug users (for troubleshooting auth)
+app.get("/debug-users", async (req, res) => {
+  try {
+    const result = await pool.query(
+      "SELECT id, email, role, tenant_id, LENGTH(password_hash) as hash_len FROM users"
+    );
+    res.json(result.rows);
+  } catch (err) {
+    console.error("Debug users error:", err);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
 // Routes
 app.use("/auth", authRoutes);
 app.use("/notes", authMiddleware, notesRoutes);
 app.use("/tenants", authMiddleware, tenantsRoutes);
 
-// Start server (only in local dev, not Vercel)
+// Local development only
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
