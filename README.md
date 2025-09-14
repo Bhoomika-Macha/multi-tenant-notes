@@ -21,6 +21,7 @@ Each tenant (company) can securely manage its users and notes with strict data i
   - Manage notes
   - “Upgrade to Pro” UI after Free plan limit
 - ✅ Health Check: `GET /health → { "status": "ok" }`
+- 🌍 **CORS Enabled** for API access
 
 ---
 
@@ -38,7 +39,7 @@ All accounts use **password: `password`**
 - **Backend:** Node.js, Express, PostgreSQL
 - **Frontend:** React, Axios
 - **Auth:** JWT, bcrypt
-- **Deployment:** Vercel
+- **Deployment:** Vercel (frontend + backend)
 
 ---
 
@@ -62,9 +63,9 @@ All accounts use **password: `password`**
 ---
 
 ## 🚀 Deployment
-- **Frontend:** Vercel  
-- **Backend:** Vercel (with PostgreSQL)  
-- Enable **CORS** for cross-origin API calls.
+- **Backend:** [https://multi-tenant-notes-backend-rose.vercel.app](https://multi-tenant-notes-backend-rose.vercel.app)
+- **Frontend:** [https://multi-tenant-notes-three.vercel.app](https://multi-tenant-notes-three.vercel.app)
+
 
 ---
 
@@ -99,4 +100,5 @@ All accounts use **password: `password`**
 
 **CRUD endpoints tested**
 
-**Frontend integrated**
+**Frontend integrated and functional**
+**CORS enabled for automated tests**
