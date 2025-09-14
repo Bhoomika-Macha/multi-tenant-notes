@@ -1,0 +1,246 @@
+/* ---------- Global ---------- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f9fafb;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* ---------- Login Page ---------- */
+.left-panel {
+  flex: 1;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.left-panel img {
+  width: 80%;
+  max-width: 420px;
+}
+
+.right-panel.login-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #4a90e2, #1976d2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  width: 360px;
+  text-align: center;
+}
+
+.login-title {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.login-subtitle {
+  margin-bottom: 25px;
+  font-size: 14px;
+  color: #666;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  outline: none;
+  font-size: 14px;
+}
+
+.login-box input:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 6px rgba(25, 118, 210, 0.3);
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #1976d2, #4a90e2);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-box button:hover {
+  background: linear-gradient(90deg, #125aa0, #1976d2);
+  transform: translateY(-2px);
+}
+
+/* ---------- Notes Page ---------- */
+.notes-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.notes-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.notes-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  background: linear-gradient(90deg, #1976d2, #4a90e2);
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(90deg, #125aa0, #1976d2);
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 auto 30px;
+  max-width: 400px;
+}
+
+.note-form input,
+.note-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.note-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.note-form button {
+  width: 150px;
+  padding: 12px;
+  background: linear-gradient(90deg, #1976d2, #4a90e2);
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.note-form button:hover {
+  background: linear-gradient(90deg, #125aa0, #1976d2);
+}
+
+/* ---------- Notes Grid ---------- */
+.notes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.note-card {
+  flex: 1;
+  min-width: 220px;
+  max-width: 250px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+  transition: transform 0.2s;
+}
+
+.note-card:hover {
+  transform: translateY(-3px);
+  border-color: #1976d2;
+}
+
+.note-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #1976d2;
+}
+
+.note-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.note-card button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.note-card button:hover {
+  background: #d93636;
+}
+
+/* ---------- Upgrade to Pro ---------- */
+.upgrade-box {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px dashed #ff9800;
+  border-radius: 12px;
+  background: #fff8e1;
+  max-width: 500px;
+}
+
+.upgrade-box p {
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #555;
+}
+
+.upgrade-box button {
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #ff9800, #f57c00);
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upgrade-box button:hover {
+  background: linear-gradient(90deg, #e68900, #d76e00);
+}
